@@ -4,38 +4,63 @@ import pandas as pd
 
 app = Flask(__name__)
 
-# Load saved model
-model = pickle.load(open("heart_model.pkl", "rb"))
+# Load the trained machine learning model
+with open("heart_model.pkl", "rb") as file:
+    model = pickle.load(file)
+
 
 @app.route("/")
 def home():
-    # Page 1: Input form
     return render_template("index.html")
+
 
 @app.route("/predict", methods=["POST"])
 def predict():
-    # Collect form inputs
+
+    # Collect input values from the form
     features = [
-        int(request.form["age"]),
-        int(request.form["sex"]),
-        int(request.form["cp"]),
-        int(request.form["bp"]),
-        int(request.form["chol"]),
-        int(request.form["fbs"]),
-        int(request.form["ecg"]),
-        int(request.form["thalach"]),
-        int(request.form["exang"]),
+        float(request.form["age"]),
+        float(request.form["sex"]),
+        float(request.form["cp"]),
+        float(request.form["bp"]),
+        float(request.form["chol"]),
+        float(request.form["fbs"]),
+        float(request.form["ecg"]),
+        float(request.form["thalach"]),
+        float(request.form["exang"]),
         float(request.form["oldpeak"]),
-        int(request.form["slope"]),
-        int(request.form["ca"]),
-        int(request.form["thal"])
+        float(request.form["slope"]),
+        float(request.form["ca"]),
+        float(request.form["thal"])
     ]
 
-    # Convert to DataFrame (important)
-    input_data = pd.DataFrame([features], columns=model.feature_names_in_)
+    # Dataset feature names
+    feature_names = [
+        "age",
+        "sex",
+        "chest pain type",
+        "resting blood pressure",
+        "serum cholestoral",
+        "fasting blood sugar",
+        "resting electrocardiographic results",
+        "max heart rate",
+        "exercise induced angina",
+        "oldpeak",
+        "ST segment",
+        "major vessels",
+        "thal"
+    ]
 
+    # Create DataFrame
+    input_data = pd.DataFrame(
+        [features],
+        columns=feature_names
+    )
+
+    # Make prediction
     prediction = model.predict(input_data)[0]
 
+    # Convert prediction to result
     if prediction == 1:
         result = "⚠️ Heart Disease Detected"
         status = "danger"
@@ -43,8 +68,12 @@ def predict():
         result = "✅ No Heart Disease Detected"
         status = "success"
 
-    # Page 2: Result page
-    return render_template("result.html", prediction=result, status=status)
+    return render_template(
+        "result.html",
+        prediction=result,
+        status=status
+    )
+
 
 if __name__ == "__main__":
     app.run(debug=True)
