@@ -1,72 +1,135 @@
 # ❤️ Heart Disease Risk Prediction
 
-### An end-to-end machine learning web application that predicts the presence or absence of heart disease using clinical health parameters.
+
+### An end-to-end machine learning project that predicts the presence or absence of heart disease using multiple machine learning algorithms and a Flask web application.
+
 
 ---
 
-## 🚀 Project Overview
 
-**Heart Disease Risk Prediction** is a machine learning-based web application developed using Python and Flask.
+## 📌 Project Overview
 
-The application allows users to enter clinical health parameters through a web interface. The entered information is processed by a trained machine learning model, and the application displays the predicted result.
 
-This project demonstrates the use of **Machine Learning, Python, Flask, HTML, and CSS** to build a practical healthcare-related prediction application.
+This project is a machine learning-based web application for predicting heart disease from clinical input parameters.
 
-> ⚠️ **Disclaimer:** This project is developed for educational and demonstration purposes only. It is not a medical diagnostic system and should not be used as a substitute for professional medical advice.
 
----
+Multiple machine learning algorithms are evaluated, and the model with the best F1 score is selected automatically.
 
-## 🛠 Technologies Used
 
-* **Programming Language:** Python
-* **Machine Learning:** Scikit-learn
-* **Data Processing:** Pandas, NumPy
-* **Web Framework:** Flask
-* **Frontend:** HTML, CSS
-* **Model Serialization:** Pickle
-* **Dataset:** Heart disease clinical dataset
-* **Version Control:** Git & GitHub
+The selected model is integrated with a Flask web application where users can enter patient information and receive a prediction.
+
+
+> **Project Note:** This repository is a modified and extended version of an existing MIT-licensed project. The project has been adapted with updated model training, preprocessing, Flask integration, and application improvements.
+
 
 ---
 
-## 💡 Features
 
-* ❤️ Heart disease prediction
-* 📝 User-friendly patient input form
-* 🤖 Machine learning-based prediction
-* 🌐 Flask web application
-* 🎨 Responsive HTML and CSS interface
-* 📊 Clinical dataset for machine learning
-* 📦 Pre-trained model stored using Pickle
-* 📄 Separate prediction result page
+## 🧠 Machine Learning Models
 
----
 
-## 📂 Project Structure
+The project evaluates the following algorithms:
+
+
+- Logistic Regression
+- Decision Tree
+- Random Forest
+- K-Nearest Neighbors (KNN)
+- Support Vector Machine (SVM)
+
+
+The model with the highest F1 score is automatically selected and saved as:
+
 
 ```text
+heart_model.pkl
+📊 Model Performance
+Best Model: Logistic Regression
+Metric	Score
+Accuracy	85.19%
+Precision	78.57%
+Recall	91.67%
+F1 Score	84.62%
+Model Comparison
+Model	Accuracy	Precision	Recall	F1 Score
+Logistic Regression	85.19%	78.57%	91.67%	84.62%
+Random Forest	83.33%	80.00%	83.33%	81.63%
+SVM	81.48%	76.92%	83.33%	80.00%
+Decision Tree	79.63%	74.07%	83.33%	78.43%
+KNN	79.63%	72.41%	87.50%	79.25%
+🛠 Technologies Used
+Programming Language: Python
+Machine Learning: Scikit-learn
+Web Framework: Flask
+Data Processing: Pandas, NumPy
+Frontend: HTML, CSS
+Model Storage: Pickle
+Version Control: Git and GitHub
+✨ Features
+Heart disease prediction using machine learning
+Multiple machine learning algorithms
+Automatic best-model selection
+Flask-based web application
+Responsive web interface
+Clinical input form
+Prediction result page
+Trained model saved as heart_model.pkl
+📂 Project Structure
 Heart-Disease-Risk-Prediction/
+│
+├── app.py
+├── HeartDiseasePrediction.py
+├── heart_model.pkl
+├── dataset_heart.csv
+├── requirements.txt
+├── runtime.txt
+├── .python-version
+├── LICENSE
+├── README.md
 │
 ├── static/
 │   └── style.css
 │
-├── templates/
-│   ├── index.html
-│   └── result.html
-│
-├── app.py
-├── HeartDiseasePrediction.py
-├── dataset_heart.csv
-├── heart_model.pkl
-├── requirements.txt
-├── runtime.txt
-├── .python-version
-├── README.md
-└── LICENSE
-🧠 How It Works
+└── templates/
+    ├── index.html
+    └── result.html
+⚡ Installation & Local Setup
+1. Clone the repository
+git clone https://github.com/udayaprakash2004/Heart-Disease-Risk-Prediction.git
+2. Navigate to the project folder
+cd Heart-Disease-Risk-Prediction
+3. Create a virtual environment
+python -m venv .venv
+4. Activate the virtual environment
+Windows PowerShell
+.\.venv\Scripts\Activate.ps1
+
+If PowerShell blocks the activation script:
+
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+
+Then:
+
+.\.venv\Scripts\Activate.ps1
+5. Install dependencies
+pip install -r requirements.txt
+6. Train the machine learning models
+python HeartDiseasePrediction.py
+
+This evaluates the machine learning algorithms and saves the best model as:
+
+heart_model.pkl
+7. Start the Flask application
+python app.py
+8. Open the application
+
+Open your browser and visit:
+
+http://127.0.0.1:5000
+🔄 How the System Works
 User
   ↓
-Enter Clinical Parameters
+Enter Clinical Information
   ↓
 Flask Web Application
   ↓
@@ -74,117 +137,52 @@ Input Data Processing
   ↓
 Trained Machine Learning Model
   ↓
-Prediction
+Heart Disease Prediction
   ↓
-Display Result
-Prediction Process
-The user opens the web application.
-The user enters the required clinical parameters.
-Flask receives the submitted information.
-The input values are converted into the required format.
-The trained machine learning model processes the input.
-The model generates a prediction.
-The prediction is displayed on the result page.
-📊 Input Parameters
+Result Displayed
+📋 Input Parameters
 
-The application uses clinical parameters required by the trained model, including:
+The application uses clinical parameters including:
 
 Age
 Sex
 Chest pain type
-Blood pressure
-Cholesterol
+Resting blood pressure
+Serum cholesterol
 Fasting blood sugar
-Resting ECG
+Resting electrocardiographic results
 Maximum heart rate
 Exercise-induced angina
-ST depression
-Slope
-Number of major vessels
-Thalassemia-related parameter
-🤖 Machine Learning Model
+Oldpeak
+ST segment
+Major vessels
+Thalassemia
+🚀 Live Demo
 
-The machine learning training code is available in:
+Live demo: Coming soon
 
-HeartDiseasePrediction.py
+A live demo link will be added after deploying this version of the project.
 
-The trained model is saved as:
-
-heart_model.pkl
-
-The Flask application loads the saved model and uses it to generate predictions from the clinical parameters entered by the user.
-
-📊 Dataset
-
-The project uses:
-
-dataset_heart.csv
-
-The dataset contains clinical attributes used for training and prediction of heart disease.
-
-⚡ Installation & Local Setup
-1️⃣ Clone the repository
-git clone https://github.com/udayaprakash2004/Heart-Disease-Risk-Prediction.git
-2️⃣ Navigate to the project folder
-cd Heart-Disease-Risk-Prediction
-3️⃣ Create a virtual environment
-python -m venv .venv
-4️⃣ Activate the virtual environment
-Windows PowerShell
-.\.venv\Scripts\Activate.ps1
-Windows Command Prompt
-.venv\Scripts\activate
-5️⃣ Install dependencies
-pip install -r requirements.txt
-6️⃣ Run the application
-python app.py
-7️⃣ Open the application
-
-Open the following address in your browser:
-
-http://127.0.0.1:5000
-🖥️ Application
-
-The application contains:
-
-📝 Input Page
-
-Users enter the required clinical parameters.
-
-📋 Result Page
-
-The trained machine learning model processes the input and displays the prediction result.
-
-🚀 Future Improvements
-Add multiple machine learning algorithms
-Compare different models
-Display accuracy, precision, recall, and F1-score
-Add prediction probability
-Add interactive charts
-Improve input validation
+🔮 Future Improvements
+Add prediction confidence/probability
 Improve the user interface
-Add model performance visualization
+Add visualization of model performance
+Add confusion matrix and classification reports
+Add additional machine learning algorithms
 Deploy the application online
-📫 Contact
+Improve input validation and error handling
+👨‍💻 Author
+
+Udaya Prakash
 
 GitHub:
+
 https://github.com/udayaprakash2004
 
-LinkedIn:
-https://www.linkedin.com/in/udayaprakash12
+Project Repository:
+
+https://github.com/udayaprakash2004/Heart-Disease-Risk-Prediction
 
 📄 License
 
-This project contains code distributed under the MIT License.
-
-See the LICENSE file for the applicable license terms and attribution requirements.
-
-⚠️ Disclaimer
-
-This application is intended only for educational and demonstration purposes.
-
-The predictions generated by this application should not be considered medical advice or a professional medical diagnosis. Always consult a qualified healthcare professional for medical decisions.
-
-## 🚀 Live Demo
-
-Coming soon...
+This project contains an MIT License.
