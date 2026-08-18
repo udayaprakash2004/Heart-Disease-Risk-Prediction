@@ -1,125 +1,190 @@
-# ❤️ Heart Disease Prediction ML
+# ❤️ Heart Disease Risk Prediction
 
-### An end-to-end machine learning project that predicts the **presence or absence of heart disease** using Logistic Regression and Flask, with a responsive CSS frontend.
+### An end-to-end machine learning web application that predicts the presence or absence of heart disease using clinical health parameters.
 
 ---
 
-## 🚀 Live Demo
+## 🚀 Project Overview
 
-Try it online: [Try Online](https://heart-disease-prediction-using-ml-fm2i.onrender.com/)
+**Heart Disease Risk Prediction** is a machine learning-based web application developed using Python and Flask.
+
+The application allows users to enter clinical health parameters through a web interface. The entered information is processed by a trained machine learning model, and the application displays the predicted result.
+
+This project demonstrates the use of **Machine Learning, Python, Flask, HTML, and CSS** to build a practical healthcare-related prediction application.
+
+> ⚠️ **Disclaimer:** This project is developed for educational and demonstration purposes only. It is not a medical diagnostic system and should not be used as a substitute for professional medical advice.
 
 ---
 
 ## 🛠 Technologies Used
 
 * **Programming Language:** Python
-* **Machine Learning:** Scikit-learn (Logistic Regression)
+* **Machine Learning:** Scikit-learn
+* **Data Processing:** Pandas, NumPy
 * **Web Framework:** Flask
 * **Frontend:** HTML, CSS
-* **Deployment:** Render (Free hosting)
-* **Data:** Heart disease clinical dataset (`dataset_heart.csv`)
+* **Model Serialization:** Pickle
+* **Dataset:** Heart disease clinical dataset
+* **Version Control:** Git & GitHub
 
 ---
 
 ## 💡 Features
 
-* Predicts heart disease based on clinical attributes  
-* Clean and responsive web interface  
-* Hosted online for real-time usage  
-* Uses a trained Logistic Regression model for accurate predictions  
-* Easy-to-use input form and result display
+* ❤️ Heart disease prediction
+* 📝 User-friendly patient input form
+* 🤖 Machine learning-based prediction
+* 🌐 Flask web application
+* 🎨 Responsive HTML and CSS interface
+* 📊 Clinical dataset for machine learning
+* 📦 Pre-trained model stored using Pickle
+* 📄 Separate prediction result page
 
 ---
 
 ## 📂 Project Structure
 
-```
-Heart-Disease-Prediction-Using-ML/
-├── app.py 📝 Flask backend
-├── heart_model.pkl 📦 Trained ML model
-├── requirements.txt 📄 Python dependencies
-├── runtime.txt ⚙️ Python version for Render
-├── templates/ 📁 HTML templates
-│ ├── index.html 🖥️ Input form
-│ └── result.html 🖥️ Prediction result
-├── static/ 📁 Static assets
-│ └── style.css 🎨 CSS styling
-└── dataset_heart.csv 📊 Sample dataset
-```
+```text
+Heart-Disease-Risk-Prediction/
+│
+├── static/
+│   └── style.css
+│
+├── templates/
+│   ├── index.html
+│   └── result.html
+│
+├── app.py
+├── HeartDiseasePrediction.py
+├── dataset_heart.csv
+├── heart_model.pkl
+├── requirements.txt
+├── runtime.txt
+├── .python-version
+├── README.md
+└── LICENSE
+🧠 How It Works
+User
+  ↓
+Enter Clinical Parameters
+  ↓
+Flask Web Application
+  ↓
+Input Data Processing
+  ↓
+Trained Machine Learning Model
+  ↓
+Prediction
+  ↓
+Display Result
+Prediction Process
+The user opens the web application.
+The user enters the required clinical parameters.
+Flask receives the submitted information.
+The input values are converted into the required format.
+The trained machine learning model processes the input.
+The model generates a prediction.
+The prediction is displayed on the result page.
+📊 Input Parameters
 
----
+The application uses clinical parameters required by the trained model, including:
 
-## ⚡ Installation & Local Setup
+Age
+Sex
+Chest pain type
+Blood pressure
+Cholesterol
+Fasting blood sugar
+Resting ECG
+Maximum heart rate
+Exercise-induced angina
+ST depression
+Slope
+Number of major vessels
+Thalassemia-related parameter
+🤖 Machine Learning Model
 
-### 1️⃣ Clone the repository
+The machine learning training code is available in:
 
-```bash
-git clone https://github.com/udayaprakash2004/Heart-Disease-Risk-Prediction
-```
+HeartDiseasePrediction.py
 
-### 2️⃣ Navigate into the project folder
+The trained model is saved as:
 
-```bash
-cd Heart-Disease-Prediction-Using-ML
-```
+heart_model.pkl
 
-### 3️⃣ Create & activate a virtual environment
+The Flask application loads the saved model and uses it to generate predictions from the clinical parameters entered by the user.
 
-```bash
-python3 -m venv venv
-source venv/bin/activate      # Linux/Mac
-venv\Scripts\activate         # Windows
-```
+📊 Dataset
 
-### 4️⃣ Install dependencies
+The project uses:
 
-```bash
+dataset_heart.csv
+
+The dataset contains clinical attributes used for training and prediction of heart disease.
+
+⚡ Installation & Local Setup
+1️⃣ Clone the repository
+git clone https://github.com/udayaprakash2004/Heart-Disease-Risk-Prediction.git
+2️⃣ Navigate to the project folder
+cd Heart-Disease-Risk-Prediction
+3️⃣ Create a virtual environment
+python -m venv .venv
+4️⃣ Activate the virtual environment
+Windows PowerShell
+.\.venv\Scripts\Activate.ps1
+Windows Command Prompt
+.venv\Scripts\activate
+5️⃣ Install dependencies
 pip install -r requirements.txt
-```
-
-### 5️⃣ Run the Flask application
-
-```bash
+6️⃣ Run the application
 python app.py
-```
+7️⃣ Open the application
 
-### 6️⃣ Open your browser
+Open the following address in your browser:
 
-```
 http://127.0.0.1:5000
-```
+🖥️ Application
 
----
+The application contains:
 
-## 🧠 How It Works
+📝 Input Page
 
-1. User enters patient data (age, sex, blood pressure, etc.)
-2. Flask loads the trained Logistic Regression model
-3. Input data is processed and passed to the model
-4. The model predicts **Heart Disease Detected** or **No Heart Disease**
-5. Result is displayed on the webpage
+Users enter the required clinical parameters.
 
----
+📋 Result Page
 
-## 🚀 Future Improvements
+The trained machine learning model processes the input and displays the prediction result.
 
-* Add more ML algorithms for better accuracy
-* Include confidence scores in predictions
-* Enhance frontend with interactive charts
-* Store historical predictions for analysis
+🚀 Future Improvements
+Add multiple machine learning algorithms
+Compare different models
+Display accuracy, precision, recall, and F1-score
+Add prediction probability
+Add interactive charts
+Improve input validation
+Improve the user interface
+Add model performance visualization
+Deploy the application online
+📫 Contact
 
----
+GitHub:
+https://github.com/udayaprakash2004
 
-## 📫 Contact
+LinkedIn:
+https://www.linkedin.com/in/udayaprakash12
 
-* **GitHub:** [https://github.com/udayaprakash2004](https://github.com/udayaprakash2004)
-* **LinkedIn:** [https://www.linkedin.com/in/udayaprakash12](https://www.linkedin.com/in/udayaprakash12)
+📄 License
+
+This project contains code distributed under the MIT License.
+
+See the LICENSE file for the applicable license terms and attribution requirements.
+
+⚠️ Disclaimer
+
+This application is intended only for educational and demonstration purposes.
+
+The predictions generated by this application should not be considered medical advice or a professional medical diagnosis. Always consult a qualified healthcare professional for medical decisions.
 
 
----
 
-## 📄 License
-
-This project is licensed under the **MIT License**.
-
-```
+**Important:** I left out the old Render live-demo link because it belongs to the original project. Add a live-demo section only after you deploy **your own** version.
