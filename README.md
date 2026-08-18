@@ -112,8 +112,8 @@ http://127.0.0.1:5000
 
 ## 📫 Contact
 
-* **GitHub:** [https://github.com/PavanSurisetti](https://github.com/PavanSurisetti)
-* **LinkedIn:** [https://www.linkedin.com/in/pavan-surisetti-b3281228b/](https://www.linkedin.com/in/pavan-surisetti-b3281228b/)
+* **GitHub:** [https://github.com/udayaprakash2004](https://github.com/udayaprakash2004)
+* **LinkedIn:** [https://www.linkedin.com/in/udayaprakash12](https://www.linkedin.com/in/udayaprakash12)
 
 
 ---
