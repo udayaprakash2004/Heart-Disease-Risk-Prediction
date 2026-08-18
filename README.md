@@ -54,7 +54,7 @@ Heart-Disease-Prediction-Using-ML/
 ### 1️⃣ Clone the repository
 
 ```bash
-git clone https://github.com/PavanSurisetti/Heart-Disease-Prediction-Using-ML
+git clone https://github.com/udayaprakash2004/Heart-Disease-Risk-Prediction
 ```
 
 ### 2️⃣ Navigate into the project folder
