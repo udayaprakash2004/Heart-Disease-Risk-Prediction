@@ -40,10 +40,9 @@ The project evaluates the following algorithms:
 
 The model with the highest F1 score is automatically selected and saved as:
 
-
 ```text
 heart_model.pkl
-📊 Model Performance
+
 Best Model: Logistic Regression
 Metric	Score
 Accuracy	85.19%
