@@ -38,10 +38,6 @@ The project evaluates the following algorithms:
 - Support Vector Machine (SVM)
 
 
-The model with the highest F1 score is automatically selected and saved as:
-
-```text
-heart_model.pkl
 
 Best Model: Logistic Regression
 Metric	Score
